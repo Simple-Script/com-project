@@ -3,22 +3,9 @@ https://com-project.onrender.com
 google sites deployment
 mit liscence
 replit
-<svg fill="none" viewBox="0 0 600 300" width="600" height="300" xmlns="http://www.w3.org/2000/svg">
-  <foreignObject width="100%" height="100%">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <style>
-        .container {
-          display: flex;
-          width: 100%;
-          height: 300px;
-          background-color: black;
-          color: white;
-        }
-      </style>
+<script src="https://unpkg.com/react@15.6.1/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.js"></script>
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"/>
+<style>body { color: red }</style>
 
-      <div class="container">
-        <h1>Hi there, my name is Nikola 👋</h1>
-      </div>
-    </div>
-  </foreignObject>
-</svg>
+# Then markdown as usual...

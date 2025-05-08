@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#2E86C1">
+
+  <title>Simple Mobile Web App</title>
+
+  <!-- App icon (replace with your icon) -->
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <!-- Add manifest for Android (optional, for PWA support) -->
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f2f2f2;
+    }
+
+    header {
+      background: #2E86C1;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+
+    main {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 1em;
+      font-size: 1rem;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Mobile Web App</h1>
+  </header>
+
+  <main>
+    <p>Welcome to this simple mobile web app.</p>
+    <button onclick="alert('Button clicked!')">Click Me</button>
+  </main>
+
+</body>
+</html>

@@ -1,13 +1,235 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>My web page</title>
-    </head>
-    <body>
-        <h1>Hello, world!</h1>
-        <p>This is my first web page.</p>
-        <p>It contains a 
-             <strong>main heading</strong> and <em> paragraph </em>.
-        </p>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <title>Angwardai - Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #ccc;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(-30px);
+      animation: slideIn 1s forwards 0.5s;
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #000000;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #007BFF;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInHero 1s forwards 1s;
+    }
+
+    @keyframes fadeInHero {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #000000;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #333333;
+      max-width: 600px;
+      margin: 1rem auto;
+    }
+
+    .btn {
+      background-color: #007BFF;
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 1rem 0.5rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInFooter 1s forwards 1.5s;
+    }
+
+    @keyframes fadeInFooter {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .section h2 {
+      margin-bottom: 1rem;
+    }
+
+    .section img, .section video, .section audio {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1rem;
+    }
+
+    .logo {
+      max-height: 80px;
+    }
+
+    .slogan {
+      font-style: italic;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
+    .mission {
+      max-width: 700px;
+      margin: 1rem auto;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <strong>Angwardai</strong>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/demo">Demo</a>
+      <a href="/downloads">Downloads</a>
+      <a href="/about">About</a>
+      <a href="/license">License</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Inspired by Ward, Intelligence in Mind.</h1>
+    <p class="mission">The mission is to create problem solving tools for everyone, everywhere.</p>
+    <a href="/downloads" class="btn">Get Started</a>
+    <a href="/demo" class="btn">Demo</a>
+  </section>
+
+  <section class="section reveal">
+    <h2>Print Advertisement</h2>
+    <img src="assets/print.jpeg" alt="Print Advertisement">
+  </section>
+
+  <section class="section reveal">
+    <h2>Online Advertisement</h2>
+    <img src="assets/online.png" alt="Online Advertisement">
+  </section>
+
+  <section class="section reveal">
+    <h2>Radio Advertisement</h2>
+    <audio controls>
+      <source src="assets/radio.wav" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
+  <section class="section reveal">
+    <h2>Commercial Advertisement</h2>
+    <video controls>
+      <source src="assets/commercial.mov" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <footer>
+    &copy; 2025 Angwardai. All Rights Reserved. | Inspired by Ward, Built by Minds. | <a href="/license">View License</a>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // Prevents re-triggering
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    reveals.forEach(reveal => {
+      observer.observe(reveal);
+    });
+  </script>
+
+</body>
 </html>
